@@ -1,0 +1,27 @@
+[type="checkbox"]:before {
+    margin-left: 20px;
+}
+[type="checkbox"]:after {
+    margin-left: 19px;
+}
+[type="checkbox"] {
+    outline: none;
+}
+#darkmode-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    border-radius: 50%;
+    background: black;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    padding-top: 15px;
+}
+tr.done {
+    text-decoration: line-through;
+}
+.delete-issue {
+    cursor: pointer;
+}

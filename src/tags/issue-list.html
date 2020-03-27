@@ -1,0 +1,35 @@
+<issue-list>
+    <div class="card mt-4">
+        <div class="card-header">Issues</div>
+        <table class="card-body table table-borderless m-0">
+            <tr each="{ items }" class="{ done: done }" data-issue="{ client_id }">
+                <td class="pl-4" style="width: 50px;"><input type="checkbox" checked="{ done }" onclick="{ check_issue }"></td>
+                <td>{ title }</td>
+                <td class="text-right">Priority { priority }</td>
+                <td class="text-right">{ due_date }</td>
+                <td class="text-right pr-4" style="width: 50px;"><i class="fas fa-trash-alt delete-issue" onclick="{ delete_issue }"></i></td>
+            </tr>
+            <tr if="{ items.length == 0 }">
+                <td colspan="4">No issues found.</td>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+        this.items = project.issues;
+
+        this.check_issue = function() {
+            let issue = project.getIssue(this.client_id);
+            issue.done = !issue.done;
+            issue.save();
+            tracker.save();
+            riot.mount('issue-list');
+        };
+
+        this.delete_issue = function() {
+            project.removeIssue(this.client_id);
+            tracker.save();
+            riot.mount('issue-list');
+        };
+    </script>
+</issue-list>

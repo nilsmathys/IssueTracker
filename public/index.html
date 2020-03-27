@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="WEB3 Issue Tracker">
+    <meta name="author" content="Nils Mathys, Leo Meier, Dominic Gisler">
+
+    <title>WEB3 - Issue Tracker</title>
+
+    <link href="node_modules/bootswatch/dist/sketchy/bootstrap.min.css" rel="stylesheet">
+    <link href="node_modules/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+    <link href="node_modules/jquery-ui/themes/base/all.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <link href="" rel="stylesheet" id="darkmode">
+
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/jquery-datepicker/jquery-datepicker.js"></script>
+    <script src="node_modules/riot/riot+compiler.min.js"></script>
+    <script src="node_modules/riot-route/dist/route.min.js"></script>
+    <script src="js/issue.js"></script>
+    <script src="js/project.js"></script>
+    <script src="js/tracker.js"></script>
+    <script src="js/index.js"></script>
+</head>
+<body>
+    <div id="darkmode-toggle">🌓</div>
+    <issue-tracker></issue-tracker>
+    <script type="riot/tag" src="js/tags/create-issue.html"></script>
+    <script type="riot/tag" src="js/tags/header.html"></script>
+    <script type="riot/tag" src="js/tags/issue-list.html"></script>
+    <script type="riot/tag" src="js/tags/issue-tracker.html"></script>
+    <script type="riot/tag" src="js/tags/projects.html"></script>
+    <script type="riot/tag" src="js/tags/select-project.html"></script>
+    <script type="riot/tag" src="js/tags/create-project.html"></script>
+    <script type="riot/tag" src="js/tags/inputs/dropdown.html"></script>
+    <script type="riot/tag" src="js/tags/inputs/text.html"></script>
+    <script type="riot/tag" src="js/tags/inputs/datepicker.html"></script>
+    <script type="riot/tag" src="js/tags/inputs/button.html"></script>
+</body>
+</html>

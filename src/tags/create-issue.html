@@ -1,0 +1,77 @@
+<create-issue>
+    <div class="card mt-4">
+        <div class="card-header">Create Issue</div>
+        <form class="card-body form-row" onsubmit="{ submit }">
+            <div class="col-md-6 col-lg-3">
+                <dropdown options="{ priorities }" ref="issue_priority"></dropdown>
+            </div>
+            <div class="col-md-6 col-lg-3 mt-2 mt-md-0">
+                <datepicker ident="issue_due_date" ref="issue_due_date" placeholder="Due date ..."></datepicker>
+            </div>
+            <div class="col-md-6 col-lg-4 mt-2 mt-lg-0">
+                <input-text ref="issue_title" placeholder="New issue ..."></input-text>
+            </div>
+            <div class="col-md-6 col-lg-2 mt-2 mt-lg-0">
+                <input-button class="btn-primary w-100" label="Create issue" ref="create-issue"></input-button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        this.priorities = [
+            {
+                "label": "Priority",
+                "disabled": "disabled",
+                "selected": true
+            },
+            {
+                "label": 1,
+                "value": 1
+            },
+            {
+                "label": 2,
+                "value": 2
+            },
+            {
+                "label": 3,
+                "value": 3
+            }
+        ];
+
+        this.submit = function(e) {
+            e.preventDefault();
+            let priority = this.refs.issue_priority.refs.issue_priority;
+            let due_date = this.refs.issue_due_date.refs.issue_due_date;
+            let title = this.refs.issue_title.refs.issue_title;
+
+            $(priority).removeClass('is-invalid');
+            $(due_date).removeClass('is-invalid');
+            $(title).removeClass('is-invalid');
+
+            let issue = new Issue(0, uuidv4(), false, title.value, due_date.value, priority.value, project.id, project.client_id);
+            let errors = issue.getErrors();
+
+            if (errors.length === 0) {
+                issue.save();
+                project.addIssue(issue);
+                tracker.save();
+                riot.mount('create-issue');
+                riot.mount('issue-list');
+            } else {
+                for (let i = 0; i < errors.length; i++) {
+                    switch (errors[i]) {
+                        case 'priority':
+                            $(priority).addClass('is-invalid');
+                            break;
+                        case 'due_date':
+                            $(due_date).addClass('is-invalid');
+                            break;
+                        case 'title':
+                            $(title).addClass('is-invalid');
+                            break;
+                    }
+                }
+            }
+        };
+    </script>
+</create-issue>

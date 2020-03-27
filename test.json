@@ -1,0 +1,26 @@
+[
+  {
+    "id": 0,
+    "client_id": "c58b8e7c-f066-4b05-99ee-abb1fd4a5c1a",
+    "title": "Project 001",
+    "active": true,
+    "issues": [
+      {
+        "id": 0,
+        "client_id": "1d17c924-5c83-4bc3-ba53-b0f2c8f09b8f",
+        "done": false,
+        "title": "Issue 001",
+        "due_date": "2019-11-11",
+        "priority": 1
+      },
+      {
+        "id": 0,
+        "client_id": "6322d0fe-b436-4461-8c67-ae4dac268e51",
+        "done": true,
+        "title": "Issue 002",
+        "due_date": "2019-11-11",
+        "priority": 1
+      }
+    ]
+  }
+]

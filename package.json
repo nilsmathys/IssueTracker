@@ -1,0 +1,45 @@
+{
+  "name": "web3",
+  "version": "1.0.0",
+  "description": "WEB3 project (mathynil, meierleo, gisledom)",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.zhaw.ch/gisledom/web3.git"
+  },
+  "keywords": [
+    "web3"
+  ],
+  "author": "IT18ta_win",
+  "contributors": [
+    {
+      "name": "Nils Mathys",
+      "email": "mathynil@students.zhaw.ch"
+    },
+    {
+      "name": "Leo Meier",
+      "email": "meierleo@students.zhaw.ch"
+    },
+    {
+      "name": "Dominic Gisler",
+      "email": "gisledom@students.zhaw.ch"
+    }
+  ],
+  "license": "ISC",
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.12.0",
+    "bootstrap": "^4.4.1",
+    "bootswatch": "^4.4.1",
+    "express": "^4.17.1",
+    "jquery": "^3.4.1",
+    "jquery-datepicker": "^1.12.3",
+    "jquery-ui": "^1.12.1",
+    "morgan": "^1.9.1",
+    "popper.js": "^1.16.0",
+    "riot": "^3.13.2",
+    "riot-route": "^3.1.4"
+  }
+}

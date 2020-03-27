@@ -1,0 +1,43 @@
+<select-project>
+    <div class="card">
+        <div class="card-header">Projects</div>
+        <div class="card-body">
+            <div class="form-row">
+                <div class="col-10 col-sm-8 col-lg-9 col-xl-10">
+                    <dropdown options="{ projects }" ref="select_project" onchange="{ change_project }"></dropdown>
+                </div>
+                <div class="col-2 col-sm-4 col-lg-3 col-xl-2">
+                    <button type="button" class="btn btn-primary w-100" onclick="{ delete_project }"><i class="fa fa-trash"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var options = [];
+        for (var i = 0; i < tracker.size(); i++) {
+            options.push({
+                label: tracker.get(i).title,
+                value: tracker.get(i).client_id,
+                selected: project.client_id === tracker.get(i).client_id
+            })
+        }
+        this.projects = options;
+
+        this.change_project = function() {
+            let uuid = this.refs.select_project.refs.select_project.value;
+            route('projects/' + uuid);
+        };
+
+        this.delete_project = function() {
+            let uuid = this.refs.select_project.refs.select_project.value;
+            tracker.removeProject(uuid);
+            tracker.save();
+            if (tracker.get(0)) {
+                route('projects/' + tracker.get(0).client_id);
+            } else {
+                route('');
+            }
+        };
+    </script>
+</select-project>

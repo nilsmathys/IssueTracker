@@ -1,0 +1,36 @@
+body, .card, .table td, .form-control,
+.ui-datepicker, .ui-datepicker-header, .ui-datepicker-calendar, .ui-datepicker-calendar th, .ui-datepicker-calendar td, .ui-widget-content .ui-state-default {
+    background-color: black;
+}
+.form-control:focus {
+    background-color: #333;
+}
+body, .card, .table td, .table tr, a, [type=checkbox]:checked:after, .form-control {
+    color: #808080;
+}
+a:hover, .form-control:focus,
+.ui-datepicker, .ui-datepicker-header, .ui-datepicker-calendar, .ui-datepicker-calendar th, .ui-datepicker-calendar td, .ui-widget-content .ui-state-default {
+    color: white;
+}
+.card, [type=checkbox]:before, .form-control, .form-control:focus {
+    border-color: #808080;
+}
+.darkmode-show {
+    display: initial !important;
+}
+.darkmode-none {
+    display: none;
+}
+#darkmode-toggle {
+    background: white;
+}
+.ui-widget-content .ui-state-default.ui-state-active {
+    background: white;
+    border: 1px solid white;
+    color: black;
+}
+.ui-widget-content .ui-state-default.ui-state-highlight {
+    background: #dad55e;
+    border: 1px solid #dad55e;
+    color: black;
+}
