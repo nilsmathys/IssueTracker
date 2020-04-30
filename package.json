@@ -34,7 +34,7 @@
     "bootstrap": "^4.4.1",
     "bootswatch": "^4.4.1",
     "express": "^4.17.1",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "jquery-datepicker": "^1.12.3",
     "jquery-ui": "^1.12.1",
     "morgan": "^1.9.1",
